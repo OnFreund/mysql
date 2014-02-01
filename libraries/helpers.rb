@@ -32,7 +32,7 @@ module Opscode
       def assign_root_password_cmd
         str = '/usr/bin/mysqladmin'
         str << ' -u root password '
-        str << node['mysql']['server_root_password']
+        str << "'#{node['mysql']['server_root_password']}'"
       end
 
       def install_grants_cmd
